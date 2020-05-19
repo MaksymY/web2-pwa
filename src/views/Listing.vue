@@ -1,6 +1,6 @@
 <template>
   <div class="listing">
-    <h1 class="listing__title">This is listing page</h1>
+    <h1 class="listing__title">The Stories.</h1>
     <ul class="listing__content">
       <li 
         class="listing__card"
@@ -9,11 +9,11 @@
       >
         <img
           v-if="post.id != 1"
-          class="listing__image"
+          class="listing__card-image"
           :src="getImage(post.id)"
           alt="main image of the article"
         >
-        <p>{{post.title}}</p>
+        <p class="listing__card-title">{{post.title}}</p>
         <router-link :to="`/Article/${ post.id }`"> Aller à l'article</router-link>
       </li>
     </ul>
@@ -35,7 +35,7 @@ export default {
   },
   methods: {
     getImage(id) {
-      return `https://picsum.photos/id/1${id}/300/400.jpg?blur=1`;
+      return `https://picsum.photos/id/1${id}/300/400.jpg`;
     },
   },
 }
@@ -58,6 +58,7 @@ export default {
     .listing__card {
       position: relative;
       border-radius: 6px;
+      background: rgba(0,0,0,0.35);
       &:first-of-type {
         grid-column: 1 / -1;
         justify-content: center;
@@ -67,11 +68,18 @@ export default {
         background-size: cover;
       }
     }
-    .listing__image {
+    .listing__card-image {
       position: absolute;
       border-radius: 6px;
       left: 0;
       z-index: -1;
+    }
+    .listing__card-title {
+      color: $color_white_1;
+      font-weight: bold;
+      text-transform: capitalize;
+      font-size: 30px;
+      padding: 0 10px;
     }
   }
 </style>
