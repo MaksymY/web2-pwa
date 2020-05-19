@@ -1,14 +1,15 @@
 <template>
-    <div>
-        <p>{{post.title}}</p>
-        <p>{{post.body}}</p>
-				<img :src="getImage(post.id)">
+    <div class="article">
+        <p class="article__title">{{post.title}}</p>
+        <p class="article__text">{{post.body}}</p>
+				<img class="article__image" :src="getImage(post.id)">
     </div>
 </template>
 <script>
 import { getTheArticle } from "@/api.js"
 
 export default {
+	name: "Article",
 	data: () => ({
 		post: [],
 	}),
@@ -23,3 +24,8 @@ export default {
 	},
 }
 </script>
+<style lang="scss">
+	.article {
+
+	}
+</style>

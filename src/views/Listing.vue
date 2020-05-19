@@ -1,15 +1,20 @@
 <template>
   <div class="listing">
-    <h1>This is listing page</h1>
+    <h1 class="listing__title">This is listing page</h1>
     <ul class="listing__content">
       <li 
         class="listing__card"
         v-for="(post, i) in posts"
         :key="i"
       >
+        <img
+          v-if="post.id != 1"
+          class="listing__image"
+          :src="getImage(post.id)"
+          alt="main image of the article"
+        >
         <p>{{post.title}}</p>
         <router-link :to="`/Article/${ post.id }`"> Aller à l'article</router-link>
-        <img :src="getImage(post.id)" alt="">
       </li>
     </ul>
   </div>
@@ -30,7 +35,7 @@ export default {
   },
   methods: {
     getImage(id) {
-      return `https://picsum.photos/id/1${id}/400/200.jpg`;
+      return `https://picsum.photos/id/1${id}/300/400.jpg?blur=1`;
     },
   },
 }
@@ -40,9 +45,33 @@ export default {
     .listing__content {
       list-style-type: none;
       padding: 0;
+      display: grid;
+      width: 100%;
+      grid-template-columns: repeat(auto-fill, 300px);
+      grid-auto-rows: 400px;
+      grid-gap: 25px;
+      justify-content: center;
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
     }
     .listing__card {
-      border: solid 1px black;
+      position: relative;
+      border-radius: 6px;
+      &:first-of-type {
+        grid-column: 1 / -1;
+        justify-content: center;
+        align-items: center;
+        background: url("../assets/main.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+    }
+    .listing__image {
+      position: absolute;
+      border-radius: 6px;
+      left: 0;
+      z-index: -1;
     }
   }
 </style>
