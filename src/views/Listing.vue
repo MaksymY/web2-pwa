@@ -9,22 +9,30 @@
       >
         <p>{{post.title}}</p>
         <router-link :to="`/Article/${ post.id }`"> Aller à l'article</router-link>
+        <img :src="getImage(post.id)" alt="">
       </li>
     </ul>
   </div>
 </template>
 
 <script>
+import { getArticles } from "@/api.js";
+
 export default {
   name: "Listing",
   data: () => ({
-		posts: [],
+    posts: [],
+    img: ""
 	}),
   created() {
-    fetch("https://jsonplaceholder.typicode.com/posts")
-      .then(resp => resp.json())
-      .then(data => this.posts = data)
-  }
+    getArticles()
+      .then(data => this.posts = data);
+  },
+  methods: {
+    getImage(id) {
+      return `https://picsum.photos/id/1${id}/400/200.jpg`;
+    },
+  },
 }
 </script>
 <style lang="scss">

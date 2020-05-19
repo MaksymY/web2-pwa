@@ -1,18 +1,25 @@
 <template>
     <div>
-        <p>{{posts.title}}</p>
-        <p>{{posts.body}}</p>
+        <p>{{post.title}}</p>
+        <p>{{post.body}}</p>
+				<img :src="getImage(post.id)">
     </div>
 </template>
 <script>
+import { getTheArticle } from "@/api.js"
+
 export default {
-    data: () => ({
-		posts: [],
+	data: () => ({
+		post: [],
 	}),
-    created() {
-    fetch(`https://jsonplaceholder.typicode.com/posts/${ this.$route.params.slug }`)
-        .then(resp => resp.json())
-        .then(data => this.posts = data)
-    }
+	created() {
+		getTheArticle(this.$route.params.slug)
+			.then(data => this.post = data)
+	},
+	methods: {
+		getImage(id) {
+				return `https://picsum.photos/id/1${id}/400/200.jpg`;
+		},
+	},
 }
 </script>
