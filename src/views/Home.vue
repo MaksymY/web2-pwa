@@ -1,11 +1,11 @@
 <template>
   <div class="home">
     <div class="home__content">
-      <p>Présentation</p>
+      <p class="home__title">Presentation</p>
       <h1>A BLOG<br>FOR ALL<br>MAFIA</h1>
       <div class="home__author">
         <img class="home__author-img" src="../assets/Vito_Scaletta.jpg" alt="" srcset="">
-        <p>By Vito Scaletta in New York</p>
+        <p class="home__author-name">By Vito Scaletta in New York</p>
       </div>
       <p class="home__text">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia doloribus similique maiores itaque cupiditate necessitatibus nisi quae sunt accusantium, iure id harum aliquid? Sequi non, adipisci libero pariatur consequatur minus. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit obcaecati, corporis eaque, officiis animi distinctio voluptatem iure eveniet pariatur consequatur optio molestiae officia repudiandae explicabo laborum perferendis ipsa ducimus. Dignissimos!
@@ -25,13 +25,11 @@ export default {
 
 <style lang="scss">
 .home {
-  padding: 30px;
+  padding: 50px 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
-  &__content {
 
-  }
   &__image {
     width: 35vw;
     border-radius: 5px;
@@ -42,7 +40,9 @@ export default {
   &__author-img {
     width: 50px;
     border-radius: 50px ;
-    margin-right: 20px;
+  }
+  &__author-name {
+    padding-left: 20px;
   }
   &__text {
     max-width: 700px;

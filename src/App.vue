@@ -49,8 +49,8 @@ export default {
   }
 
   &__nav-icon {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
   }
 
   &__nav-link {
