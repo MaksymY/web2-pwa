@@ -1,31 +1,68 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/Listing">Listing</router-link>
+  <div class="app">
+    <div class="app__nav">
+      <svg class="app__nav-icon">
+        <use href="#MainIcon"/>
+      </svg>
+      <router-link 
+        class="app__nav-link"
+        exact-active-class="app__nav-link--active"
+        to="/"
+      >
+        Home
+      </router-link>
+      <router-link
+        class="app__nav-link"
+        exact-active-class="app__nav-link--active"
+        to="/Listing"
+      >
+        Listing
+      </router-link>
     </div>
     <router-view/>
+    <TheIconsSet/>
   </div>
 </template>
 
+<script>
+import TheIconsSet from "@/components/TheIconsSet.vue";
+export default {
+  name: "app",
+  components: {
+    TheIconsSet,
+  }
+}
+</script>
+
 <style lang="scss">
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-}
 
-#nav {
-  padding: 30px;
-}
+  &__nav {
+    top: 0;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+  }
 
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
+  &__nav-icon {
+    width: 30px;
+    height: 30px;
+  }
 
-#nav a.router-link-exact-active {
-  color: #42b983;
+  &__nav-link {
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 0 20px;
+    &:first-of-type{
+      padding-left: 100px;
+    }
+    &--active {
+      color: #42b983;
+    }
+  }
 }
 </style>

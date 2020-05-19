@@ -27,7 +27,7 @@ export default {
   name: "Listing",
   data: () => ({
     posts: [],
-    img: ""
+    img: "",
 	}),
   created() {
     getArticles()
@@ -42,7 +42,8 @@ export default {
 </script>
 <style lang="scss">
   .listing {
-    .listing__content {
+    text-align: center;
+    &__content {
       list-style-type: none;
       padding: 0;
       display: grid;
@@ -55,30 +56,30 @@ export default {
       padding: 0;
       margin: 0;
     }
-    .listing__card {
+    &__card {
       position: relative;
       border-radius: 6px;
-      background: rgba(0,0,0,0.35);
+      background: rgba(0,0,0,0.40);
       &:first-of-type {
         grid-column: 1 / -1;
         justify-content: center;
         align-items: center;
-        background: url("../assets/main.jpg");
+        background: url("../assets/main.jpg") rgba(0,0,0,0.40);
         background-repeat: no-repeat;
         background-size: cover;
       }
     }
-    .listing__card-image {
+    &__card-image {
       position: absolute;
       border-radius: 6px;
       left: 0;
       z-index: -1;
     }
-    .listing__card-title {
+    &__card-title {
       color: $color_white_1;
       font-weight: bold;
       text-transform: capitalize;
-      font-size: 30px;
+      font-size: 25px;
       padding: 0 10px;
     }
   }
