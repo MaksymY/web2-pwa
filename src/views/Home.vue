@@ -52,6 +52,10 @@ export default {
     text-decoration: underline;
   }
   @media (max-width: 700px) {
+    &__title {
+      margin-top: 50px;
+    }
+
     &__image {
       display: none;
     }

@@ -1,7 +1,8 @@
 <template>
   <div class="listing">
     <h1 class="listing__title">The Stories.</h1>
-    <ul class="listing__content">
+    <Loader v-if="!posts"/>
+    <ul v-else class="listing__content">
       <li 
         class="listing__card"
         v-for="(post, i) in posts"
@@ -30,11 +31,15 @@
 
 <script>
 import { getArticles } from "@/api.js";
+import Loader from "@/components/Loader.vue"
 
 export default {
   name: "Listing",
+  components: {
+    Loader,
+  },
   data: () => ({
-    posts: [],
+    posts: null,
     img: "",
 	}),
   created() {
@@ -51,7 +56,7 @@ export default {
 <style lang="scss">
   .listing {
     text-align: center;
-    margin-top: 55px;
+    margin-top: 80px;
 
     &__content {
       list-style-type: none;
