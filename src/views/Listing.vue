@@ -56,7 +56,7 @@ export default {
 <style lang="scss">
   .listing {
     text-align: center;
-    margin-top: 80px;
+    margin-top: 60px;
 
     &__content {
       list-style-type: none;

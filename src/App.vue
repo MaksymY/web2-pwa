@@ -41,7 +41,6 @@ export default {
   -moz-osx-font-smoothing: grayscale;
 
   &__nav {
-    top: 0;
     position: absolute;
     display: flex;
     align-items: center;
@@ -62,6 +61,20 @@ export default {
     }
     &--active {
       color: #42b983;
+    }
+  }
+  @media (min-width: 550px) {
+    &__nav {
+      top: 0;
+    }
+  }
+  @media (max-width: 550px) {
+    &__nav {
+      position: fixed;
+      bottom: 0;
+      background-color: $color_white_1;
+      z-index: 100;
+      width: 100%;
     }
   }
 }

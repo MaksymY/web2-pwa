@@ -2,7 +2,7 @@
   <div class="home">
     <div class="home__content">
       <p class="home__title">Presentation</p>
-      <h1>A BLOG<br>FOR ALL<br>MAFIA</h1>
+      <h1 class="home__subtitle">A BLOG<br>FOR ALL<br>MAFIA</h1>
       <div class="home__author">
         <img class="home__author-img" src="../assets/Vito_Scaletta.jpg" alt="" srcset="">
         <p class="home__author-name">By Vito Scaletta in New York</p>
@@ -25,10 +25,15 @@ export default {
 
 <style lang="scss">
 .home {
-  padding: 50px 20px;
+  padding: 50px 20px 20px 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
+  overflow: hidden;
+
+  &__subtitle {
+    font-size: 35px;
+  }
 
   &__image {
     width: 35vw;
@@ -52,10 +57,6 @@ export default {
     text-decoration: underline;
   }
   @media (max-width: 700px) {
-    &__title {
-      margin-top: 50px;
-    }
-
     &__image {
       display: none;
     }
