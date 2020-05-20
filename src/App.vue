@@ -89,16 +89,26 @@ export default {
       width: 100vw;
       height: 50px;
     }
-  
+
     &__nav {
+      display: flex;
+      justify-content: center;
       position: fixed;
       bottom: 0;
       background-color: $color_white_1;
-      z-index: 100;
       width: 100%;
       padding: 15px 0;
+      z-index: 100;
     }
+
+    &__nav-link {
+      &:first-of-type{ 
+        padding: 0 20px;
+      }
+    }
+
     &__nav-icon {
+      text-align: center;
       display: none;
     }
   }

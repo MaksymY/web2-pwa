@@ -3,7 +3,7 @@
         <p class="article__title">{{post.title}}</p>
         <p class="article__text">{{post.body}}</p>
 		<img class="article__image" :src="getImage(post.id)">
-		<button @click="addFavorite(post)">test</button>
+		<button class="article__button" @click="addFavorite(post)">Add to favorit</button>
     </div>
 </template>
 <script>
@@ -25,7 +25,7 @@ export default {
 			this.addToFavorite(article)
 		},
 		getImage(id) {
-			return `https://picsum.photos/id/1${id}/400/200.jpg`;
+			return `https://picsum.photos/id/1${id}/300/400.jpg`;
 		},
 	},
 }
@@ -38,7 +38,20 @@ export default {
 		&__title {
 			font-size: 30px;
 			font-weight: bold;
+		}
 
+		&__button {
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			align-items: center;
+			background-color: $brand-color;
+			color: $color_white_1;
+			padding: 0 20px;
+			border-radius: 5px;
+			padding: 10px;
+			border: none;
+			max-width: 200px;
 		}
 	}
 </style>
