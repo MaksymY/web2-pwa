@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss">
 .home {
-  padding: 50px 20px 20px 10px;
+  padding: 50px 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
