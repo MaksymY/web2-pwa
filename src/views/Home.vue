@@ -44,6 +44,7 @@ export default {
   }
   &__author-img {
     width: 50px;
+    height: 50px;
     border-radius: 50px ;
   }
   &__author-name {
