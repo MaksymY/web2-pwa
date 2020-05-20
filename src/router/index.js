@@ -16,6 +16,11 @@ Vue.use(VueRouter)
     component: () => import('../views/Listing.vue')
   },
   {
+    path: '/Favorie',
+    name: 'Favorie',
+    component: () => import('../views/Favorie.vue')
+  },
+  {
     path: '/Article',
     name: 'Article',
     component: () => import('../views/Article.vue'),

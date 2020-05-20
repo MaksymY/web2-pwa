@@ -18,6 +18,13 @@
       >
         Listing
       </router-link>
+      <router-link
+        class="app__nav-link"
+        exact-active-class="app__nav-link--active"
+        to="/Favorie"
+      >
+        Favorie
+      </router-link>
     </div>
     <router-view/>
     <TheIconsSet/>
