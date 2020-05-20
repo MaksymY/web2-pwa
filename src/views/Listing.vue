@@ -130,5 +130,8 @@ export default {
       color: $color_white_1;
       margin-left: 10px;
     }
+    @media (max-width: 550px) {
+      margin: 30px 0 80px 0;
+    }
   }
 </style>

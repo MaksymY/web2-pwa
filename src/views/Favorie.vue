@@ -1,27 +1,27 @@
 <template>
-  <div class="listing">
-    <h1 class="listing__title">Your Favorit.</h1>
-    <ul class="listing__content">
+  <div class="favorit">
+    <h1 class="favorit__title">Your Favorit.</h1>
+    <ul class="favorit__content">
       <li 
-        class="listing__card"
+        class="favorit__card"
         v-for="(post, i) in favorie"
         :key="i"
       >
         <img
           v-if="post.id != 1"
-          class="listing__card-image"
+          class="favorit__card-image"
           :src="getImage(post.id)"
           alt="main image of the article"
         >
-        <p class="listing__card-title">{{post.title}}</p>
+        <p class="favorit__card-title">{{post.title}}</p>
         <router-link
-          class="listing__button"
+          class="favorit__button"
           :to="{ name: 'Article', params: { post }}"
         >
-          <svg class="listing__button-icon">
+          <svg class="favorit__button-icon">
             <use href="#SeeIcon"/>
           </svg>
-          <p class="listing__button-text">see the article</p>
+          <p class="favorit__button-text">see the article</p>
         </router-link>
       </li>
     </ul>
@@ -32,7 +32,7 @@
 import { mapState } from "vuex";
 
 export default {
-  name: "Listing",
+  name: "favorit",
   data: () => ({
     img: "",
 	}),
@@ -49,7 +49,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.listing {
+.favorit {
   text-align: center;
   margin: 60px 0 80px 0;
 
@@ -116,6 +116,9 @@ export default {
   &__button-text {
     color: $color_white_1;
     margin-left: 10px;
+  }
+  @media (max-width: 550px) {
+    margin: 30px 0 80px 0;
   }
 }
 </style>

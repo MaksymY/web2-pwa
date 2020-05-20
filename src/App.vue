@@ -1,5 +1,8 @@
 <template>
   <div class="app">
+    <svg class="app__mobile-icon">
+        <use href="#MainIcon"/>
+    </svg>
     <div class="app__nav">
       <svg class="app__nav-icon">
         <use href="#MainIcon"/>
@@ -54,6 +57,10 @@ export default {
     padding: 15px 25px;
   }
 
+  &__mobile-icon {
+    display: none;
+  }
+
   &__nav-icon {
     width: 40px;
     height: 40px;
@@ -76,12 +83,23 @@ export default {
     }
   }
   @media (max-width: 550px) {
+    &__mobile-icon {
+      display: flex;
+      text-align: center;
+      width: 100vw;
+      height: 50px;
+    }
+  
     &__nav {
       position: fixed;
       bottom: 0;
       background-color: $color_white_1;
       z-index: 100;
       width: 100%;
+      padding: 15px 0;
+    }
+    &__nav-icon {
+      display: none;
     }
   }
 }
