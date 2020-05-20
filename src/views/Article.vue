@@ -6,16 +6,13 @@
     </div>
 </template>
 <script>
-import { getTheArticle } from "@/api.js"
-
 export default {
 	name: "Article",
 	data: () => ({
 		post: [],
 	}),
 	created() {
-		getTheArticle(this.$route.params.slug)
-			.then(data => this.post = data)
+		this.post = this.$route.params.post;
 	},
 	methods: {
 		getImage(id) {

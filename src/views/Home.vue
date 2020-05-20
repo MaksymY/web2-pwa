@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss">
 .home {
-  padding: 50px 20px 20px 10px;
+  padding: 50px 20px 80px 20px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -45,7 +45,7 @@ export default {
   &__author-img {
     width: 50px;
     height: 50px;
-    border-radius: 50px ;
+    border-radius: 50px;
   }
   &__author-name {
     padding-left: 20px;

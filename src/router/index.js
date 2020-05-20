@@ -16,9 +16,10 @@ Vue.use(VueRouter)
     component: () => import('../views/Listing.vue')
   },
   {
-    path: '/Article/:slug',
+    path: '/Article',
     name: 'Article',
-    component: () => import('../views/Article.vue')
+    component: () => import('../views/Article.vue'),
+    props: true,
   }
 ]
 

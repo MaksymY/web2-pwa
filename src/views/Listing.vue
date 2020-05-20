@@ -17,7 +17,7 @@
         <p class="listing__card-title">{{post.title}}</p>
         <router-link
           class="listing__button"
-          :to="`/Article/${ post.id }`"
+          :to="{ name: 'Article', params: { post }}"
         >
           <svg class="listing__button-icon">
             <use href="#SeeIcon"/>
@@ -56,7 +56,7 @@ export default {
 <style lang="scss">
   .listing {
     text-align: center;
-    margin-top: 60px;
+    margin: 60px 0 80px 0;
 
     &__content {
       list-style-type: none;
