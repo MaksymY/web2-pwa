@@ -25,7 +25,7 @@ export default {
 
 <style lang="scss">
 .home {
-  padding: 50px 20px;
+  padding: 50px 20px 20px 10px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -58,6 +58,7 @@ export default {
     text-decoration: underline;
   }
   @media (max-width: 700px) {
+    padding: 30px 20px;
     &__image {
       display: none;
     }
