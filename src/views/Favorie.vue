@@ -35,7 +35,13 @@ export default {
   name: "favorit",
   data: () => ({
     img: "",
-	}),
+  }),
+  //test
+  watch: {
+    favorie(newArticle) {
+      localStorage.name = newArticle;
+    }
+  },
   computed: {
 		...mapState([
 			"favorie",

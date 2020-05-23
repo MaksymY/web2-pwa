@@ -32,19 +32,5 @@
 	width: 0;
 	height: 0;
 	opacity: 0;
-
-	&__path--rounded {
-		stroke-linecap: round;
-		stroke-linejoin: round;
-	}
-
-	&__backArrow {
-		stroke-width: 5;
-	}
-
-	&__horizontalRope,
-	&__verticalRope {
-		stroke-width: 10;
-	}
 }
 </style>
